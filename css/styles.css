@@ -627,53 +627,6 @@ h2{
   gap:6px
 }
 
-.gbox{
-  background:var(--gp);
-  border-radius:12px;
-  padding:28px;
-  margin-top:28px;
-  display:flex;
-  gap:20px;
-  align-items:flex-start
-}
-
-.gbadge{
-  width:64px;
-  height:64px;
-  background:var(--gm);
-  border-radius:50%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  color:#fff
-}
-
-.gbadge .gd{
-  font-family:'Playfair Display',serif;
-  font-size:22px;
-  font-weight:700;
-  line-height:1
-}
-
-.gbadge .gdi{
-  font-size:10px;
-  letter-spacing:.05em
-}
-
-.gtit{
-  font-size:15px;
-  font-weight:600;
-  color:var(--gd);
-  margin-bottom:6px
-}
-
-.gtxt{
-  font-size:13px;
-  color:var(--mid);
-  line-height:1.6
-}
 
 .faq{
   margin-top:28px
