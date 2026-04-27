@@ -118,12 +118,13 @@ body{
   padding:18px 48px;
   border-radius:8px;
   text-decoration:none;
-  transition:transform .15s,filter .15s
+  transition:background-color .3s ease,transform .5s cubic-bezier(.34,.1,.68,1);
+  transform-origin:center
 }
 
 .btn-gold:hover{
-  transform:translateY(-2px);
-  filter:brightness(1.06)
+  background-color:#E68A0D;
+  transform:scale(1.03)
 }
 
 .btn-gold small{
@@ -601,13 +602,14 @@ h2{
   border-radius:10px;
   text-decoration:none;
   text-align:center;
-  transition:transform .15s,filter .15s;
-  margin-bottom:14px
+  transition:background-color .3s ease,transform .5s cubic-bezier(.34,.1,.68,1);
+  margin-bottom:14px;
+  transform-origin:center
 }
 
 .btn-buy:hover{
-  transform:translateY(-2px);
-  filter:brightness(1.06)
+  background-color:#E68A0D;
+  transform:scale(1.03)
 }
 
 .btn-buy small{
@@ -717,4 +719,135 @@ footer{
 
 .cta-wrap{
   animation:fadeUp .6s .2s ease both
+}
+
+/* Animações de Reveal */
+@keyframes fadeInUp{
+  from{
+    opacity:0;
+    transform:translateY(10px)
+  }
+  to{
+    opacity:1;
+    transform:translateY(0)
+  }
+}
+
+@keyframes slideIn{
+  from{
+    opacity:0;
+    transform:translateX(-20px)
+  }
+  to{
+    opacity:1;
+    transform:translateX(0)
+  }
+}
+
+@keyframes shine{
+  0%{
+    left:-100%
+  }
+  100%{
+    left:100%
+  }
+}
+
+@keyframes scaleIn{
+  from{
+    opacity:0;
+    transform:scale(.95)
+  }
+  to{
+    opacity:1;
+    transform:scale(1)
+  }
+}
+
+/* Elementos com fade-in em cascata */
+.pain-list li{
+  opacity:0;
+  animation:fadeInUp .6s ease-out forwards
+}
+
+.pain-list li:nth-child(1){animation-delay:.1s}
+.pain-list li:nth-child(2){animation-delay:.2s}
+.pain-list li:nth-child(3){animation-delay:.3s}
+.pain-list li:nth-child(4){animation-delay:.4s}
+.pain-list li:nth-child(5){animation-delay:.5s}
+
+/* Benefícios */
+.bc{
+  opacity:0;
+  animation:slideIn .6s ease-out forwards
+}
+
+.bc:nth-child(1){animation-delay:.1s}
+.bc:nth-child(2){animation-delay:.2s}
+.bc:nth-child(3){animation-delay:.3s}
+.bc:nth-child(4){animation-delay:.4s}
+.bc:nth-child(5){animation-delay:.5s}
+.bc:nth-child(6){animation-delay:.6s}
+
+/* Cards de depoimento */
+.tcard{
+  opacity:0;
+  animation:scaleIn .6s ease-out forwards
+}
+
+.tcard:nth-child(1){animation-delay:.1s}
+.tcard:nth-child(2){animation-delay:.3s}
+.tcard:nth-child(3){animation-delay:.5s}
+
+/* Lista de capítulos */
+.clist li{
+  opacity:0;
+  animation:fadeInUp .5s ease-out forwards
+}
+
+.clist li:nth-child(1){animation-delay:.05s}
+.clist li:nth-child(2){animation-delay:.1s}
+.clist li:nth-child(3){animation-delay:.15s}
+.clist li:nth-child(4){animation-delay:.2s}
+.clist li:nth-child(5){animation-delay:.25s}
+.clist li:nth-child(6){animation-delay:.3s}
+.clist li:nth-child(7){animation-delay:.35s}
+.clist li:nth-child(8){animation-delay:.4s}
+.clist li:nth-child(9){animation-delay:.45s}
+.clist li:nth-child(10){animation-delay:.5s}
+
+/* Itens do FAQ */
+.fi{
+  opacity:0;
+  animation:fadeInUp .5s ease-out forwards
+}
+
+.fi:nth-child(1){animation-delay:.1s}
+.fi:nth-child(2){animation-delay:.15s}
+.fi:nth-child(3){animation-delay:.2s}
+.fi:nth-child(4){animation-delay:.25s}
+.fi:nth-child(5){animation-delay:.3s}
+
+/* Efeito de brilho no quote */
+.quote{
+  position:relative;
+  overflow:hidden
+}
+
+.quote::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+  animation:shine 3s infinite;
+  pointer-events:none
+}
+
+/* Hover suave com mudança de cor */
+.btn-gold,
+.btn-buy{
+  transition:background-color .3s ease,transform .15s ease,filter .15s ease
 }
